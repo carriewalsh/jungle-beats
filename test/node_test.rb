@@ -1,9 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
-require "pry"
-
-require "./lib/node"
-
+require "test_helper"
 
 class NodeTest < Minitest::Test
   def setup
