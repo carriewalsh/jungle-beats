@@ -11,9 +11,10 @@ class LinkedList
     current = @head
     if current == nil
       @head = Node.new(data)
-    elsif current.next_node != nil
-      current = current.next_node
-    elsif current.next_node == nil
+    else
+      while current.next_node != nil
+        current = current.next_node
+      end
       current.next_node = Node.new(data)
     end
   end
