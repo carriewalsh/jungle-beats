@@ -21,7 +21,7 @@ class LinkedListTest < MiniTest::Test
     @linked_list.append("plop")
     assert_equal "plop", @linked_list.head.data
     @linked_list.append("doop")
-    assert_equal "doop", @linked_list.head.next_node
+    assert_equal "doop", @linked_list.head.next_node.data
   end
 
   def test_nodes_can_be_counted

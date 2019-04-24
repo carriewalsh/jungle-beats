@@ -34,9 +34,11 @@ class LinkedList
 
   def to_string
     string = ""
-    string += @head.data.to_s
-    if @head.next_node
-      string += @head.next_node.data.to_s
+    current = @head
+    string += current.data.to_s
+    while current.next_node != nil
+      current = current.next_node
+      string += " " + current.data.to_s
     end
     string
   end
