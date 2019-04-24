@@ -77,7 +77,7 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_nodes_can_be_searched_for
-    assert_equal true, @linked_list.include("doop")
-    assert_equal false, @linked_list.include("mmmbop")
+    assert_equal true, @linked_list.include?("doop")
+    assert_equal false, @linked_list.include?("mmmbop")
   end
 end

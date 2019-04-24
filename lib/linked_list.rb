@@ -70,4 +70,29 @@ class LinkedList
     @head.next_node = current
   end
 
+  def pop
+    current = @head
+    if current
+      if current.next_node
+        until current.next_node.next_node == nil
+          current = current.next_node
+        end
+        last = current.next_node
+        current.next_node = nil
+      else
+        last = current
+        @head = nil
+      end
+      last.data
+    end
+  end
+
+  def find(index,amount)
+
+  end
+
+  def include?(data)
+
+  end
+
 end
