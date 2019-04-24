@@ -88,7 +88,20 @@ class LinkedList
   end
 
   def find(index,amount)
-
+    new_list = LinkedList.new
+    count = 0
+    current = @head
+    if current
+      until count == index
+        count += 1
+        current = current.next_node
+      end
+      until new_list.count == amount
+        new_list.append(current.data)
+        current = current.next_node
+      end
+    end
+    new_list.to_string
   end
 
   def include?(data)

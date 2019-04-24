@@ -68,13 +68,14 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_specific_nodes_can_be_found
-    skip
     one = "plop"
     two = "plop doop"
     three = "doop derp"
     assert_equal one, @linked_list.find(0,1)
     assert_equal two, @linked_list.find(0,2)
     assert_equal three, @linked_list.find(1,2)
+    assert_equal "", @linked_list.find(0,0)
+    assert_equal "", @linked_list2.find(0,3)
   end
 
   def test_nodes_can_be_searched_for
