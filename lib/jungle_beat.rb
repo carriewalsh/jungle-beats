@@ -1,8 +1,10 @@
 class JungleBeat
   attr_reader :list
+  attr_accessor :rate
 
   def initialize
     @list = LinkedList.new
+    @rate = 200
   end
 
   def count
@@ -27,7 +29,7 @@ class JungleBeat
   end
 
   def play
-    `say -r 200 #{@list.to_string}`
+    `say -r #{@rate} #{@list.to_string}`
     @list.to_string
   end
 end

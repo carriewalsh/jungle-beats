@@ -35,4 +35,11 @@ class JungleBeatTest < Minitest::Test
     @jungle_beat.append("mmmbop, ba duba dop ba, do bop")
     assert_equal ditty, @jungle_beat.play
   end
+
+  def test_rate_can_be_changed
+    ditty = "mmmbop, ba duba dop ba, do bop"
+    @jungle_beat.append("mmmbop, ba duba dop ba, do bop")
+    @jungle_beat.rate = 500
+    assert_equal ditty, @jungle_beat.play
+  end
 end
