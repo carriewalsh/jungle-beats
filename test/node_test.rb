@@ -7,7 +7,7 @@ require "./lib/node"
 
 class NodeTest < Minitest::Test
   def setup
-    @node = Node.new(data: "plop")
+    @node = Node.new("plop")
   end
 
   def test_node_exists
