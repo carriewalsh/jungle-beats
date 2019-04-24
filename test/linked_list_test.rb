@@ -45,4 +45,18 @@ class LinkedListTest < MiniTest::Test
     @linked_list.append("derp")
     assert_equal "plop doop derp", @linked_list.to_string
   end
+
+  def test_nodes_can_be_inserted
+    @linked_list.append("plop")
+    @linked_list.append("doop")
+    @linked_list.insert(1, "derp")
+    assert_equal "plop derp doop", @linked_list.to_string
+  end
+
+  def test_nodes_can_be_prepended
+    @linked_list.append("plop")
+    @linked_list.append("doop")
+    @linked_list.prepend("derp")
+    assert_equal "derp plop doop", @linked_list.to_string
+  end
 end
