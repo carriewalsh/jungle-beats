@@ -1,6 +1,8 @@
 require "minitest/autorun"
 require "minitest/pride"
 require "./lib/linked_list"
+require "./lib/node"
+require "pry"
 
 class LinkedListTest < MiniTest::Test
   def setup
@@ -27,7 +29,6 @@ class LinkedListTest < MiniTest::Test
 
   def test_list_can_be_concatenated_to_a_string
     @linked_list.append("plop")
-    @linked_list.append("doop")
-    assert_equal "plop doop", @linked_list.to_string
+    assert_equal "plop", @linked_list.to_string
   end
 end
