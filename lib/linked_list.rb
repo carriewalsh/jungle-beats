@@ -96,9 +96,16 @@ class LinkedList
         count += 1
         current = current.next_node
       end
-      until new_list.count == amount
-        new_list.append(current.data)
-        current = current.next_node
+      if amount > self.count
+        until new_list.count == self.count - index
+          new_list.append(current.data)
+          current = current.next_node
+        end
+      else
+        until new_list.count == amount
+          new_list.append(current.data)
+          current = current.next_node
+        end
       end
     end
     new_list.to_string
