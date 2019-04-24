@@ -29,4 +29,9 @@ class JungleBeatTest < Minitest::Test
     @jungle_beat.list.append("duba")
     assert_equal 3, @jungle_beat.count
   end
+
+  def test_jungle_beat_can_be_played
+    ditty = "mmmbop ba duba dop ba do bop"
+    assert_equal ditty, @jungle_beat.play
+  end
 end
