@@ -92,19 +92,21 @@ class LinkedList
     count = 0
     current = @head
     if current
-      until count == index
-        count += 1
-        current = current.next_node
-      end
-      if amount > self.count
-        until new_list.count == self.count - index
-          new_list.append(current.data)
+      if self.count > index
+        until count == index
+          count += 1
           current = current.next_node
         end
-      else
-        until new_list.count == amount
-          new_list.append(current.data)
-          current = current.next_node
+        if amount > self.count
+          until new_list.count == self.count - index
+            new_list.append(current.data)
+            current = current.next_node
+          end
+        else
+          until new_list.count == amount
+            new_list.append(current.data)
+            current = current.next_node
+          end
         end
       end
     end
