@@ -8,21 +8,28 @@ class LinkedList
   end
 
   def append(data)
-    if @head == nil
+    current = @head
+    if current == nil
       @head = Node.new(data)
+    elsif current.next_node != nil
+      current = current.next_node
+    elsif current.next_node == nil
+      current.next_node = Node.new(data)
     end
   end
 
   def count
     count = 0
-    if @head == nil
+    current = @head
+    if current == nil
       count += 0
-    elsif @head.next_node == nil
-      count += 1
     end
-    # while next_node != nil
-    #   count
-    # end
+    count += 1
+    while current.next_node != nil
+      count += 1
+      current = current.next_node
+    end
+    count
   end
 
   def to_string
