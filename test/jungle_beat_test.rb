@@ -14,6 +14,10 @@ class JungleBeatTest < Minitest::Test
     assert_nil @jungle_beat.list.head
   end
 
+  def test_jungle_beat_has_default_rate
+    assert_equal 200, @jungle_beat.rate
+  end
+
   def test_jungle_beats_can_have_nodes_added
     @jungle_beat.append("mmmbop ba duba dop ba do")
     assert_equal "mmmbop", @jungle_beat.list.head.data
