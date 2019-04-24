@@ -27,7 +27,7 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_nodes_can_be_counted
-    skip
+    assert_equal 0, @linked_list.count
     @linked_list.append("plop")
     assert_equal 1, @linked_list.count
     @linked_list.append("doop")
@@ -37,7 +37,7 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_list_can_be_concatenated_to_a_string
-    skip
+    assert_equal "", @linked_list.to_string
     @linked_list.append("plop")
     assert_equal "plop", @linked_list.to_string
     @linked_list.append("doop")

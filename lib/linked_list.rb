@@ -23,12 +23,12 @@ class LinkedList
     count = 0
     current = @head
     if current == nil
-      count += 0
-    end
-    count += 1
-    while current.next_node != nil
+    else
       count += 1
-      current = current.next_node
+      while current.next_node != nil
+        count += 1
+        current = current.next_node
+      end
     end
     count
   end
@@ -36,10 +36,13 @@ class LinkedList
   def to_string
     string = ""
     current = @head
-    string += current.data.to_s
-    while current.next_node != nil
-      current = current.next_node
-      string += " " + current.data.to_s
+    if current == nil
+    else
+      string += current.data.to_s
+      while current.next_node != nil
+        current = current.next_node
+        string += " " + current.data.to_s
+      end
     end
     string
   end
