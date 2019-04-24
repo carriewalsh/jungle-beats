@@ -68,11 +68,16 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_specific_nodes_can_be_found
-
+    one = "plop"
+    two = "plop doop"
+    three = "doop derp"
+    assert_equal one, @linked_list.find(0,1)
+    assert_equal two, @linked_list.find(0,2)
+    assert_equal three, @linked_list.find(1,2)
   end
 
   def test_nodes_can_be_searched_for
-
-
+    assert_equal true, @linked_list.include("doop")
+    assert_equal false, @linked_list.include("mmmbop")
   end
 end
