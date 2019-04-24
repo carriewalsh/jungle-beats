@@ -17,6 +17,7 @@ class LinkedList
       end
       current.next_node = Node.new(data)
     end
+    data
   end
 
   def count
