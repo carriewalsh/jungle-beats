@@ -4,4 +4,8 @@ class JungleBeat
   def initialize
     @list = LinkedList.new
   end
+
+  def count
+    @list.count
+  end
 end
