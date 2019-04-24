@@ -18,6 +18,10 @@ class JungleBeatTest < Minitest::Test
     assert_equal 200, @jungle_beat.rate
   end
 
+  def test_jungle_beat_has_default_voice
+    assert_equal "Alex", @jungle_beat.voice
+  end
+
   def test_jungle_beats_can_have_nodes_added
     @jungle_beat.append("mmmbop ba duba dop ba do")
     assert_equal "mmmbop", @jungle_beat.list.head.data
@@ -45,5 +49,14 @@ class JungleBeatTest < Minitest::Test
     @jungle_beat.append("mmmbop, ba duba dop ba, do bop")
     @jungle_beat.rate = 500
     assert_equal ditty, @jungle_beat.play
+  end
+
+  def test_voice_can_be_changed_and_reset
+    @jungle_beat.voice = "fiona"
+    ditty = "mmmbop, ba duba dop ba, do bop"
+    @jungle_beat.append("mmmbop, ba duba dop ba, do bop")
+    assert_equal "fiona", @jungle_beat.voice
+    @jungle_beat.reset_voice
+    assert_equal "Alex", @jungle_beat.voice
   end
 end
