@@ -19,6 +19,8 @@ class JungleBeatTest < Minitest::Test
     assert_equal "mmmbop", @jungle_beat.list.head.data
     @jungle_beat.append("bop")
     assert_equal 7, @jungle_beat.list.count
+    @jungle_beat.append("")
+    assert_equal 7, @jungle_beat.list.count
   end
 
   def test_jungle_beat_can_be_counted

@@ -10,17 +10,19 @@ class JungleBeat
   end
 
   def append(string)
-    current_string = string
-    word = ""
-    until current_string.length == 0
-      if current_string.chr != " "
-        word += string.chr
-      else
-        @list.append(word)
-        word = ""
+    if string.length > 0
+      current_string = string
+      word = ""
+      until current_string.length == 0
+        if current_string.chr != " "
+          word += string.chr
+        else
+          @list.append(word)
+          word = ""
+        end
+        current_string[0] = ""
       end
-      current_string[0] = ""
+      @list.append(word)
     end
-    @list.append(word)
   end
 end
