@@ -61,11 +61,10 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_nodes_can_be_popped
-    skip
     assert_equal "derp", @linked_list.pop.data
     assert_equal "doop", @linked_list.pop.data
     assert_equal "plop", @linked_list.pop.data
-    assert_nil @linked_list.pop.data
+    assert_nil @linked_list.pop
   end
 
   def test_specific_nodes_can_be_found
