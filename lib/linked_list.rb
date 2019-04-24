@@ -83,7 +83,7 @@ class LinkedList
         last = current
         @head = nil
       end
-      last.data
+      last
     end
   end
 
@@ -92,7 +92,19 @@ class LinkedList
   end
 
   def include?(data)
-
+    list = self
+    current = list.pop
+    if current
+      until list.count == 0 || current.data == data
+        current = list.pop
+      end
+      if current.data == data
+        return true
+      else
+        return false
+      end
+    else
+      return false
+    end
   end
-
 end

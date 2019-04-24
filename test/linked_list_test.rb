@@ -61,13 +61,15 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_nodes_can_be_popped
-    assert_equal "derp", @linked_list.pop
-    assert_equal "doop", @linked_list.pop
-    assert_equal "plop", @linked_list.pop
-    assert_nil @linked_list.pop
+    skip
+    assert_equal "derp", @linked_list.pop.data
+    assert_equal "doop", @linked_list.pop.data
+    assert_equal "plop", @linked_list.pop.data
+    assert_nil @linked_list.pop.data
   end
 
   def test_specific_nodes_can_be_found
+    skip
     one = "plop"
     two = "plop doop"
     three = "doop derp"
@@ -77,6 +79,7 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_nodes_can_be_searched_for
+    assert_equal false, @linked_list2.include?("doop")
     assert_equal true, @linked_list.include?("doop")
     assert_equal false, @linked_list.include?("mmmbop")
   end
