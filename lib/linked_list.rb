@@ -48,4 +48,26 @@ class LinkedList
     string
   end
 
+  def insert(index,data)
+    count = 0
+    current = @head
+    if count == index
+      prepend(data)
+    else
+      until count + 1 == index
+        count += 1
+        current = current.next_node
+      end
+      next_node = current.next_node
+      current.next_node = Node.new(data)
+      current.next_node.next_node = next_node
+    end
+  end
+
+  def prepend(data)
+    current = @head
+    @head = Node.new(data)
+    @head.next_node = current
+  end
+
 end
