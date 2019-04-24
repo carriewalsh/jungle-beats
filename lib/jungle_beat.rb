@@ -25,4 +25,9 @@ class JungleBeat
       @list.append(word)
     end
   end
+
+  def play
+    `say -r 200 #{@list.to_string}`
+    @list.to_string
+  end
 end

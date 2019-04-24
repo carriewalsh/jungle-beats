@@ -31,7 +31,8 @@ class JungleBeatTest < Minitest::Test
   end
 
   def test_jungle_beat_can_be_played
-    ditty = "mmmbop ba duba dop ba do bop"
+    ditty = "mmmbop, ba duba dop ba, do bop"
+    @jungle_beat.append("mmmbop, ba duba dop ba, do bop")
     assert_equal ditty, @jungle_beat.play
   end
 end
